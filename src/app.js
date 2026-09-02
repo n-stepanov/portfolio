@@ -113,8 +113,9 @@ function renderProjectTile(project) {
 }
 
 function renderFeed(slug) {
-  const startIndex = Math.max(0, projects.findIndex((project) => project.slug === slug));
-  const selected = projects[startIndex];
+  const feedProjects = orderedFeedProjects();
+  const startIndex = Math.max(0, feedProjects.findIndex((project) => project.slug === slug));
+  const selected = feedProjects[startIndex];
 
   setMeta(`${selected.title} - Nikolai Stepanov`);
   setActiveNav(null);
@@ -125,10 +126,25 @@ function renderFeed(slug) {
       <span>${escapeHtml(selected.title)}</span>
     </div>
     <div class="project-feed">
-      ${projects.slice(startIndex).map(renderProjectSection).join("")}
+      ${feedProjects.slice(startIndex).map(renderProjectSection).join("")}
     </div>
   `;
   observeEmbeds();
+}
+
+function orderedFeedProjects() {
+  const radioSlug = "radio-morpheus-urvakan";
+  const ivanSlug = "ivan-dorn-tic-tac";
+  const feedProjects = projects.filter((project) => project.slug !== radioSlug);
+  const radioProject = projects.find((project) => project.slug === radioSlug);
+  const ivanIndex = feedProjects.findIndex((project) => project.slug === ivanSlug);
+
+  if (!radioProject || ivanIndex < 0) {
+    return projects;
+  }
+
+  feedProjects.splice(ivanIndex, 0, radioProject);
+  return feedProjects;
 }
 
 function renderProjectSection(project) {

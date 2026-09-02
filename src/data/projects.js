@@ -28,7 +28,7 @@ export const projects = [
     project: "EKONIKA x Gotleb",
     role: "Original Music & Sound Design",
     media: [{ provider: "vimeo", url: "https://vimeo.com/1209564363?fl=pl&fe=sh", id: "1209564363" }],
-    thumbnail: "/public/images/ekonika-gotleb-preview.png",
+    thumbnail: "https://vumbnail.com/1209564363.jpg",
     grid: "wide"
   },
   {
