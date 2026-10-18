@@ -44,6 +44,8 @@ function projectFields(project) {
     ["Client", project.client],
     ["Project", project.project],
     ["Production", project.production],
+    ["Production Services", project.productionServices],
+    ["Featuring", project.featuring],
     ["Type", project.type],
     ["Film", project.film],
     ["For", project.for],
