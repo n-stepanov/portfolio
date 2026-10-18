@@ -3,11 +3,15 @@ export const projects = [
     slug: "conny-spec-film",
     title: "CONNY - Spec Film",
     client: "CONNY",
-    production: "2RAW",
+    production: "2RAW. Studio",
     role: "Original Music & Sound Design",
     type: "Spec Film",
     media: [{ provider: "youtube", url: "https://youtu.be/vWf0WeTYCi8", id: "vWf0WeTYCi8" }],
     thumbnail: "https://img.youtube.com/vi/vWf0WeTYCi8/maxresdefault.jpg",
+    links: [
+      { label: "Production — 2RAW. Studio", url: "https://2raw.de/en" },
+      { label: "Project credits — Crew United", url: "https://www.crew-united.com/fr/Conny-Wohnungsnot__373822.html" }
+    ],
     grid: "large-landscape"
   },
   {
@@ -49,6 +53,7 @@ export const projects = [
     additionalCredit: "with Kirk Stepanov",
     media: [{ provider: "youtube", url: "https://youtu.be/ZrUx14TaYqA", id: "ZrUx14TaYqA" }],
     thumbnail: "https://img.youtube.com/vi/ZrUx14TaYqA/maxresdefault.jpg",
+    links: [{ label: "Little Black Book — Ford / Born to Build", url: "https://lbbonline.com/news/Cade-Cunningham-Ford-Detroit" }],
     grid: "small-landscape"
   },
   {
@@ -105,10 +110,16 @@ export const projects = [
     title: "EKONIKA FW'25/26 - ICE AND FIRE",
     client: "EKONIKA",
     project: "FW'25/26 - ICE AND FIRE",
+    productionServices: "Hero Productions Iceland",
+    featuring: "Elsa Hosk",
     role: "Full Audio Production",
     credits: "Original Music - Sound Design - Voiceover Recording - Mix & Master",
     media: [{ provider: "vimeo", url: "https://vimeo.com/1119840863?fl=pl&fe=sh", id: "1119840863" }],
     thumbnail: "https://vumbnail.com/1119840863.jpg",
+    links: [
+      { label: "Production services — Hero Productions", url: "https://www.hero.is/" },
+      { label: "Behind the scenes — Ekonika Photoshoot", url: "https://www.hero.is/post/ekonika-photoshoot" }
+    ],
     grid: "wide"
   },
   {
