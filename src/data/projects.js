@@ -30,7 +30,8 @@ export const projects = [
     title: "EKONIKA x Gotleb",
     client: "EKONIKA",
     project: "EKONIKA x Gotleb",
-    role: "Original Music & Sound Design",
+    role: "Full Audio Production",
+    credits: "Original Music (All Themes) - Sound Design - AI Voiceover & Dubbing - Final Mix",
     media: [{ provider: "vimeo", url: "https://vimeo.com/1209564363?fl=pl&fe=sh", id: "1209564363" }],
     thumbnail: "https://vumbnail.com/1209564363.jpg",
     grid: "wide"
@@ -62,7 +63,7 @@ export const projects = [
     client: "EKONIKA",
     project: "EKONIKA x Kate Golden",
     role: "Full Audio Production",
-    credits: "Original Music - Sound Design - Voiceover Recording - Mix & Master",
+    credits: "Original Music (All Themes) - Sound Design - Voiceover Recording - Mix & Master",
     media: [{ provider: "vimeo", url: "https://vimeo.com/1209564924?fl=pl&fe=sh", id: "1209564924" }],
     thumbnail: "/public/images/ekonika-kate-golden-preview.png",
     grid: "tall"
