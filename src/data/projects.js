@@ -6,11 +6,9 @@ export const projects = [
     production: "2RAW Studio & Seven Films",
     collaboration: "Mieterverein Heidelberg",
     role: "Music & Sound Design",
-    additionalCredit: "Nikolai Stepanov",
     type: "Independent Social Campaign",
     description:
       "Three people. Three stories. One shared struggle: the housing crisis.\n\n" +
-      "An independent social campaign produced by 2RAW Studio and Seven Films, released in collaboration with Mieterverein Heidelberg.\n\n" +
       "The sound design blends everyday sounds, experimental textures and subtle musical elements into an immersive, character-driven soundscape, reflecting the tension, uncertainty and emotional weight of losing a place to call home.",
     media: [{ provider: "youtube", url: "https://youtu.be/FGMg-CZOTlw", id: "FGMg-CZOTlw" }],
     thumbnail: "https://img.youtube.com/vi/FGMg-CZOTlw/maxresdefault.jpg",
@@ -44,7 +42,7 @@ export const projects = [
   },
   {
     slug: "powerade-the-athletes-code",
-    title: "POWERADE - THE ATHLETES CODE (DC)",
+    title: "POWERADE — THE ATHLETES CODE (DC)",
     client: "POWERADE",
     role: "Original Music",
     additionalCredit: "with Kirk Stepanov",
@@ -114,7 +112,7 @@ export const projects = [
   },
   {
     slug: "ekonika-ice-and-fire",
-    title: "EKONIKA FW'25/26 - ICE AND FIRE",
+    title: "EKONIKA — FW'25/26: ICE AND FIRE",
     client: "EKONIKA",
     project: "FW'25/26 - ICE AND FIRE",
     productionServices: "Hero Productions Iceland",
@@ -154,7 +152,7 @@ export const projects = [
   },
   {
     slug: "radio-morpheus-urvakan",
-    title: "Radio Morpheus x Urvakan - Elektricheskaya Sobaka",
+    title: "Radio Morpheus x Urvakan — Elektricheskaya Sobaka",
     project: "Radio Morpheus x Urvakan",
     performance: "Elektricheskaya Sobaka - Live Performance",
     role: "Performer - Broadcast Engineer - Sound Engineer",
@@ -186,7 +184,7 @@ export const projects = [
   },
   {
     slug: "lesyanebo-hopeless-romantics",
-    title: "LESYANЕBO - HOPELESS ROMANTICS",
+    title: "LESYANЕBO — HOPELESS ROMANTICS",
     client: "LESYANЕBO",
     project: "HOPELESS ROMANTICS Collection",
     role: "Original Music & Sound Design",
@@ -196,7 +194,7 @@ export const projects = [
   },
   {
     slug: "ivan-dorn-tic-tac",
-    title: "Ivan Dorn - Tic Tac",
+    title: "Ivan Dorn — Tic Tac",
     officialTitle: "НЕЖНЫЙ ВОЛОСАТЫЙ ПАНК",
     role: "Sound Design",
     media: [

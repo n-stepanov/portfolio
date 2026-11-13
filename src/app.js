@@ -40,9 +40,14 @@ function projectKicker(project) {
 }
 
 function projectFields(project) {
+  const title = project.title.toLocaleLowerCase();
+  const repeatedClient = project.client && title.includes(project.client.toLocaleLowerCase());
+  const repeatedProject = project.project && title.includes(project.project.toLocaleLowerCase());
+
   const rows = [
-    ["Client", project.client],
-    ["Project", project.project],
+    ["Role", project.role],
+    ["Client", repeatedClient ? null : project.client],
+    ["Project", repeatedProject ? null : project.project],
     ["Production", project.production],
     ["In collaboration with", project.collaboration],
     ["Production Services", project.productionServices],
@@ -52,7 +57,6 @@ function projectFields(project) {
     ["For", project.for],
     ["Format", project.format],
     ["Performance", project.performance],
-    ["Role", project.role],
     ["Credits", project.credits]
   ];
 
@@ -99,7 +103,6 @@ function renderWork() {
 }
 
 function renderProjectTile(project) {
-  const kicker = projectKicker(project);
   return `
     <article class="project-tile ${escapeHtml(project.grid)}">
       <a href="/projects/${project.slug}" data-route aria-label="Open ${escapeHtml(project.title)}">
@@ -107,7 +110,7 @@ function renderProjectTile(project) {
           <div class="tile-media">${poster(project)}</div>
           <figcaption>
             <span>${escapeHtml(project.title)}</span>
-            <small>${escapeHtml([kicker, project.role].filter(Boolean).join(" / "))}</small>
+            <small>${escapeHtml(project.role || project.credits || "")}</small>
           </figcaption>
         </figure>
       </a>
@@ -283,7 +286,7 @@ function loadEmbed(element) {
 
 function renderAbout() {
   setMeta("About - Nikolai Stepanov");
-  setActiveNav("about");
+  setActiveNav(window.location.hash === "#contact" ? "contact" : "about");
   app.className = "about-page";
   app.innerHTML = `
     <section class="about-layout" aria-label="About Nikolai Stepanov">
@@ -353,6 +356,9 @@ function render() {
 
   if (path === "/about") {
     renderAbout();
+    if (window.location.hash === "#contact") {
+      requestAnimationFrame(() => document.querySelector("#contact")?.scrollIntoView());
+    }
     return;
   }
 

@@ -249,8 +249,8 @@ main {
   }
 
   .project-tile:nth-child(14) {
-    grid-column: 5 / span 4;
-    grid-row: 13 / span 5;
+    grid-column: 11 / span 2;
+    grid-row: 14 / span 4;
   }
 
   .project-tile:nth-child(15) {
@@ -610,6 +610,11 @@ dd {
 }
 
 @media (max-width: 980px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 44px);
+  }
+
   .mosaic {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     grid-auto-rows: minmax(64px, 14vw);
