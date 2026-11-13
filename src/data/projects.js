@@ -69,7 +69,7 @@ export const projects = [
     role: "Full Audio Production",
     credits: "Original Music (All Themes) - Sound Design - Voiceover Recording - Mix & Master",
     media: [{ provider: "vimeo", url: "https://vimeo.com/1209564924?fl=pl&fe=sh", id: "1209564924" }],
-    thumbnail: "/public/images/ekonika-kate-golden-preview.png",
+    thumbnail: "/public/images/ekonika-kate-golden-preview.webp",
     grid: "tall"
   },
   {
@@ -87,7 +87,7 @@ export const projects = [
         vertical: true
       }
     ],
-    thumbnail: "/public/images/frame-preview.png",
+    thumbnail: "/public/images/frame-preview.webp",
     grid: "medium-landscape"
   },
   {
@@ -147,7 +147,7 @@ export const projects = [
     ],
     note: "A composition from Dreams of Kolya Schizoph was featured in the film Temporary Shelter.",
     links: [{ label: "Film link", url: "https://www.tiff.net/events/temporary-shelter" }],
-    thumbnail: "/public/images/dreams-of-kolya-schizoph-preview.png",
+    thumbnail: "/public/images/dreams-of-kolya-schizoph-preview.webp",
     grid: "portrait"
   },
   {
