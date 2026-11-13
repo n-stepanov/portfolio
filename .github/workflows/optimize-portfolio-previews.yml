@@ -1,0 +1,50 @@
+name: One-off portfolio preview optimization
+
+on:
+  push:
+    branches:
+      - optimize-portfolio-media-20261113
+    paths:
+      - '.github/workflows/optimize-portfolio-previews.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Convert four PNG images to optimized WebP
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+          sources = [
+            "public/images/ekonika-gotleb-preview.png",
+            "public/images/ekonika-kate-golden-preview.png",
+            "public/images/frame-preview.png",
+            "public/images/dreams-of-kolya-schizoph-preview.png",
+          ]
+          for source in sources:
+              path = Path(source)
+              with Image.open(path) as original:
+                  image = ImageOps.exif_transpose(original)
+                  image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
+                  image = image.convert("RGB")
+                  target = path.with_suffix(".webp")
+                  image.save(target, "WEBP", quality=84, method=6)
+                  print(f"{path.name}: {path.stat().st_size} bytes => {target.name}: {target.stat().st_size} bytes; dimensions={image.size}")
+          PY
+      - name: Commit optimized files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/*.webp
+          git commit -m "Add optimized WebP portfolio previews"
+          git push
