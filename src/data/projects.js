@@ -1,15 +1,21 @@
 export const projects = [
   {
-    slug: "conny-spec-film",
-    title: "CONNY - Spec Film",
-    client: "CONNY",
-    production: "2RAW. Studio",
-    role: "Original Music & Sound Design",
-    type: "Spec Film",
-    media: [{ provider: "youtube", url: "https://youtu.be/vWf0WeTYCi8", id: "vWf0WeTYCi8" }],
-    thumbnail: "https://img.youtube.com/vi/vWf0WeTYCi8/maxresdefault.jpg",
+    slug: "housing-crisis-mieterverein-heidelberg",
+    legacySlugs: ["conny-spec-film"],
+    title: "Housing Crisis — Mieterverein Heidelberg",
+    production: "2RAW Studio & Seven Films",
+    collaboration: "Mieterverein Heidelberg",
+    role: "Music & Sound Design",
+    additionalCredit: "Nikolai Stepanov",
+    type: "Independent Social Campaign",
+    description:
+      "Three people. Three stories. One shared struggle: the housing crisis.\n\n" +
+      "An independent social campaign produced by 2RAW Studio and Seven Films, released in collaboration with Mieterverein Heidelberg.\n\n" +
+      "The sound design blends everyday sounds, experimental textures and subtle musical elements into an immersive, character-driven soundscape, reflecting the tension, uncertainty and emotional weight of losing a place to call home.",
+    media: [{ provider: "youtube", url: "https://youtu.be/FGMg-CZOTlw", id: "FGMg-CZOTlw" }],
+    thumbnail: "https://img.youtube.com/vi/FGMg-CZOTlw/maxresdefault.jpg",
     links: [
-      { label: "Production — 2RAW. Studio", url: "https://2raw.de/en" },
+      { label: "Production — 2RAW Studio", url: "https://2raw.de/en" },
       { label: "Project credits — Crew United", url: "https://www.crew-united.com/fr/Conny-Wohnungsnot__373822.html" }
     ],
     grid: "large-landscape"
