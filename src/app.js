@@ -36,7 +36,7 @@ function upsertMeta(kind, key, value) {
 }
 
 function projectKicker(project) {
-  return project.client || project.project || project.for || project.performance || "";
+  return project.client || project.collaboration || project.project || project.for || project.performance || "";
 }
 
 function projectFields(project) {
@@ -44,6 +44,7 @@ function projectFields(project) {
     ["Client", project.client],
     ["Project", project.project],
     ["Production", project.production],
+    ["In collaboration with", project.collaboration],
     ["Production Services", project.productionServices],
     ["Featuring", project.featuring],
     ["Type", project.type],
@@ -167,7 +168,7 @@ function renderProjectSection(project) {
             )
             .join("")}
         </dl>
-        ${project.description ? `<p class="description">${escapeHtml(project.description)}</p>` : ""}
+        ${project.description ? project.description.split(/\n\s*\n/).map((paragraph) => `<p class="description">${escapeHtml(paragraph)}</p>`).join("") : ""}
         ${project.note ? `<p class="description">${escapeHtml(project.note)}</p>` : ""}
         ${project.links ? renderLinks(project.links) : ""}
       </div>
@@ -340,9 +341,12 @@ function render() {
 
   if (projectMatch) {
     const slug = projectMatch[1];
-    const exists = projects.some((project) => project.slug === slug);
-    if (exists) {
-      renderFeed(slug);
+    const project = projects.find((item) => item.slug === slug || item.legacySlugs?.includes(slug));
+    if (project) {
+      if (project.slug !== slug) {
+        history.replaceState({}, "", `/projects/${project.slug}`);
+      }
+      renderFeed(project.slug);
       return;
     }
   }
