@@ -240,7 +240,7 @@ function observeEmbeds() {
         }
       });
     },
-    { rootMargin: "900px 0px" }
+    { rootMargin: "250px 0px", threshold: 0.01 }
   );
 
   embeds.forEach((embed) => {
